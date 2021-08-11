@@ -1,7 +1,7 @@
-package com.danila.spring_boot_crud.Controller;
+package com.danila.spring_boot_crud.controller;
 
 
-import com.danila.spring_boot_crud.Service.UserService;
+import com.danila.spring_boot_crud.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,5 +21,10 @@ public class UserController {
         model.addAttribute("one_user",userService.findByEmail(principal.getName()));
         //model.addAttribute("one_user",userService.getUserByEmail(((User) authentication.getPrincipal()).getEmail()));
         return "one_user";
+    }
+
+    @GetMapping("/test")
+    public String testing() {
+        return "test";
     }
 }
